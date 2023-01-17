@@ -69,14 +69,24 @@
   height: 8px;
 }
 
-.js-menu-container a {
-  color: var(--slate);
+.sidebar-list-a.current:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 66px;
+  color: var(--iris);
+}
+
+.sidebar-list-a {
+  color: var(--navy-blue);
 }
 
 .sidebar-list {
   margin-top: 40px;
   font-size: 36px;
   font-weight: 700;
+  color: var(--navy-blue);
 }
 
 .sidebar-list li {
@@ -984,8 +994,8 @@ nav {
 .footer-btn:focus {
   background-color: var(--icon-hover);
 }
+
 .footer-box {
-  display: flex;
   margin-left: 80px;
 }
 
@@ -1010,7 +1020,6 @@ nav {
 .footer-label-box {
   display: flex;
   flex-direction: column;
-  margin-right: 24px;
   position: relative;
 }
 
@@ -1242,10 +1251,18 @@ Single-colored icons can be modified like so:
   }
 } */
 
-@media screen and (max-width: 428px) {
+@media screen and (max-width: 768px) {
   nav,
   .contacts-link {
     display: none;
+  }
+
+  .modal {
+    width: 95%;
+    max-width: 450px;
+    height: 95%;
+    max-height: 609px;
+    overflow: scroll;
   }
 
   .section-header {
@@ -1322,8 +1339,9 @@ Single-colored icons can be modified like so:
 
   .customers-icons {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    gap: 72px 16px;
+    justify-content: center;
   }
 
   .customers-link {
@@ -1349,7 +1367,7 @@ Single-colored icons can be modified like so:
 
   .media-links {
     margin-left: unset;
-    margin: auto;
+    margin: 0 auto;
   }
 
   .social-media-text {
@@ -1364,20 +1382,23 @@ Single-colored icons can be modified like so:
     align-items: center;
   }
 
-  .footer-buttons {
-    margin-bottom: 72px;
-  }
-
-  .footer-label-box {
-    margin-right: unset;
-  }
-
   .footer-label {
     text-align: center;
   }
 
   .footer-form-input {
     width: 100%;
+    max-width: 398px;
+    margin: 0 auto;
+  }
+
+  .footer-button {
+    margin: 0 auto;
+    margin-top: 16px;
+  }
+
+  .footer-buttons {
+    margin-bottom: 72px;
   }
 
   .buttons {
@@ -1396,9 +1417,14 @@ Single-colored icons can be modified like so:
   }
 }
 
-@media screen and (min-width: 480px) and (max-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1157px) {
   .menu-toggle {
     display: none;
+  }
+
+  .modal {
+    width: 408px;
+    height: 584px;
   }
 
   .contacts-link {
@@ -1479,11 +1505,6 @@ Single-colored icons can be modified like so:
 
   .section-footer {
     flex-wrap: wrap;
-    margin-left: 108px;
-  }
-
-  .media-links {
-    margin-left: 24px;
   }
 
   .footer-block {
@@ -1492,6 +1513,7 @@ Single-colored icons can be modified like so:
 
   .footer-box {
     margin-left: 0;
+    margin-top: 72px;
   }
 
   .buttons {
@@ -1509,6 +1531,14 @@ Single-colored icons can be modified like so:
 
   .projects-block:last-child {
     margin: unset;
+  }
+
+  .media-links {
+    margin-left: 24px;
+  }
+
+  .section-footer {
+    margin-left: 108px;
   }
 }
 
@@ -1554,22 +1584,5 @@ Single-colored icons can be modified like so:
   .section {
     padding-top: 96px;
     padding-bottom: 96px;
-  }
-}
-
-@media screen and (max-width: 780px) {
-  .modal {
-    width: 95%;
-    max-width: 450px;
-    height: 95%;
-    max-height: 609px;
-    overflow: scroll;
-  }
-}
-
-@media screen and (min-width: 780px) {
-  .modal {
-    width: 528px;
-    height: 581px;
   }
 }
